@@ -1,0 +1,41 @@
+//Teste de requisições REST - Restaurante
+@baseURL = http://localhost:4000/api
+@nome = PAN
+@codigo = 2
+###
+// GET - Lista todos os pratos
+GET {{baseURL}}/restaurante
+Content-Type: application/json
+
+###
+// GET - Lista apenas um prato pelo nome
+GET {{baseURL}}/restaurante/{{nome}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo prato
+POST {{baseURL}}/restaurante
+Content-Type: application/json
+
+{
+    "nome":"STROGONOFF",
+    "descricao":"PRATO RUSSO",
+    "preco": 38.50
+}
+
+###
+// PUT - Altera um prato já existente
+PUT {{baseURL}}/restaurante
+Content-Type: application/json
+
+{
+    "codigo": 4 ,
+    "nome":"PARMEGIANA",
+    "descricao":"PRATO BRASILEIRO",
+    "preco": 23.50
+}
+
+###
+// DELETE - Apaga um veículo através do codigo
+DELETE {{baseURL}}/restaurante/{{codigo}}
+Content-Type: application/json
